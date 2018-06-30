@@ -538,7 +538,7 @@ XXX
        be explained in detail in the respective sections.
 
 
-.. _`python_omegle/_abstractchat.py`: python_omegle/_abstractchat.py
+.. _`python_omegle/_abstractchat.py`: ../python_omegle/_abstractchat.py
 
 .. _`python_omegle/chatevent.py`: python_omegle/chatevent.py
 

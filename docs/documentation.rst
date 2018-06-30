@@ -540,11 +540,11 @@ XXX
 
 .. _`python_omegle/_abstractchat.py`: ../python_omegle/_abstractchat.py
 
-.. _`python_omegle/chatevent.py`: python_omegle/chatevent.py
+.. _`python_omegle/chatevent.py`: ../python_omegle/chatevent.py
 
-.. _`python_omegle/exceptions.py`: python_omegle/exceptions.py
+.. _`python_omegle/exceptions.py`: ../python_omegle/exceptions.py
 
-.. _`python_omegle/randomchat.py`: python_omegle/randomchat.py
+.. _`python_omegle/randomchat.py`: ../python_omegle/randomchat.py
 
 .. _`ISO 639-1`: https://en.wikipedia.org/wiki/ISO_639-1
 
@@ -552,6 +552,6 @@ XXX
 
 .. _`ReCAPTCHA protocol`: https://google.com/recaptcha/
 
-.. _`python_omegle/__init__.py`: python_omegle/__init__.py
+.. _`python_omegle/__init__.py`: ../python_omegle/__init__.py
 
 .. _`Welcome to the omegle blog!`: https://web.archive.org/web/20090403052716/http://omegler.blogspot.com/2009/03/welcome-to-omegle-blog.html

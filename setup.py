@@ -9,7 +9,7 @@ with open("README.rst") as file:
 
 setup(
     name="python-omegle",
-    version="1.0.4",
+    version="1.0.6",
     url="https://github.com/coal0/python-omegle",
 
     author="coal0",

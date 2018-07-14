@@ -1,6 +1,17 @@
 Changelog
 =========
 
+1.1.6 (July 14th, 2018)
+-----------------------
+
+Changed
+~~~~~~~
+
+* Updated README.rst to include some information about running the tests.
+* (Conclude this absolute mess of an evening)
+* Made effort to adhere to Semantic Versioning.
+
+
 1.0.6 (July 14th, 2018)
 -----------------------
 

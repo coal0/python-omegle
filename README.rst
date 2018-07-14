@@ -41,7 +41,19 @@ Installing Python-Omegle is very easy! Simply run:
 Running the tests
 ~~~~~~~~~~~~~~~~~
 
-XXX
+Some basic tests can be found in the 'tests' directory. Each chat type has its
+own class and therefore its own testing file. Let's test one of the classes:
+
+.. code:: shell
+
+  cd tests/
+  python3 random_chat_test.py
+
+If you wish to test all classes at once, simply run the following:
+
+.. code:: shell
+
+  python3 all_tests.py
 
 |
 

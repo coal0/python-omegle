@@ -73,35 +73,58 @@ class RandomChat(_AbstractChat):
     def _classify_events_and_add_to_queue(self, events_json):
         for event in events_json:
             event_type = event[0]
+
             if event_type == "connected":
                 self._chat_ready_flag = True
                 self._events.put((ChatEvent.CHAT_READY, None))
+
             elif event_type == "waiting":
                 self._events.put((ChatEvent.CHAT_WAITING, None))
+
             elif event_type == "typing":
                 if not self._chat_ready_flag:
-                    # Simulate a 'chat ready' event (see Issues: 1)
+                    # Simulate a 'chat ready' event
                     self._events.put((ChatEvent.CHAT_READY, None))
+                    self._chat_ready_flag = True
                 self._events.put((ChatEvent.PARTNER_STARTED_TYPING, None))
+
             elif event_type == "stoppedTyping":
+                # TODO Check flag here too?
                 self._events.put((ChatEvent.PARTNER_STOPPED_TYPING, None))
+
             elif event_type == "gotMessage":
                 if not self._chat_ready_flag:
-                    # Simulate a 'chat ready' event (see Issues: 1)
+                    # Simulate a 'chat ready' event
                     self._events.put((ChatEvent.CHAT_READY, None))
+                    self._chat_ready_flag = True
                 message = event[1]
                 self._events.put((ChatEvent.GOT_MESSAGE, message))
+
             elif event_type == "strangerDisconnected":
                 if not self._chat_ready_flag:
-                    # Simulate a 'chat ready' event (see Issues: 1)
+                    # Simulate a 'chat ready' event
                     self._events.put((ChatEvent.CHAT_READY, None))
                 self._events.put((ChatEvent.CHAT_ENDED, None))
                 self._chat_ready_flag = False
+
             elif event_type == "serverMessage":
+                # TODO Check flag here too?
                 notice = event[1]
                 self._events.put((ChatEvent.GOT_SERVER_NOTICE, notice))
+
             elif event_type == "identDigests":
                 # Included after a partner was found, may be ignored.
                 pass
+
             elif event_type == "recaptchaRequired":
                 raise PythonOmegleException("ReCAPTCHA check required.")
+
+    def __repr__(self):
+        return 'RandomChat(language=\"{}\")'.format(self.language)
+
+    def __str__(self):
+        # I'll regret this later...
+        connected = "yes" if self._chat_ready_flag else "no"
+        return "Random chat (language: {}, connected: {})".format(
+            self.language, connected
+        )

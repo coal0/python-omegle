@@ -493,21 +493,26 @@ Lastly, there's spyee mode:
   chat.send("Goodbye")
   chat.disconnect()
 
-Note how the argument for ``ChatEvent.CHAT_READY`` is now the question posed by the
-spy.
+Note how the argument for ``ChatEvent.CHAT_READY`` is now the question posed by
+the spy.
 
 |
 
 Issues
 ------
 
-1. Two languages which are supported on the Omegle website but not defined in ISO 639-1
-are Cebuano and Filipino, which are defined in `ISO 639-2`_ instead, and are the only
-supported languages with a three letter language code. Frisian and Hmong are not
-accepted, even though they're supported on the Omegle website and are part of ISO 639-1,
-because their language code is ambiguous.
+1. Two languages which are supported on the Omegle website but not defined in
+ISO 639-1 are Cebuano and Filipino, which are defined in `ISO 639-2`_ instead,
+and are the only supported languages with a three letter language code. Frisian
+and Hmong are not accepted, even though they're supported on the Omegle website
+and are part of ISO 639-1, because their language code is ambiguous.
 
-XXX
+2. After you receive a ``ChatEvent.PARTNER_STARTED_TYPING`` event, it's
+very likely that you will not receive a ``ChatEvent.PARTNER_STOPPED_TYPING``
+event when your partner sends you a message. That's an intentional design choice
+in the Omegle protocol, not a bug. Because this may be seen as a quirk of the
+API, it's on the todo list to fix this and mock a
+``ChatEvent.PARTNER_STOPPED_TYPING`` encounter.
 
 |
 
@@ -538,13 +543,13 @@ XXX
        be explained in detail in the respective sections.
 
 
-.. _`python_omegle/_abstractchat.py`: ../python_omegle/_abstractchat.py
+.. _`python_omegle/_abstractchat.py`: python_omegle/_abstractchat.py
 
-.. _`python_omegle/chatevent.py`: ../python_omegle/chatevent.py
+.. _`python_omegle/chatevent.py`: python_omegle/chatevent.py
 
-.. _`python_omegle/exceptions.py`: ../python_omegle/exceptions.py
+.. _`python_omegle/exceptions.py`: python_omegle/exceptions.py
 
-.. _`python_omegle/randomchat.py`: ../python_omegle/randomchat.py
+.. _`python_omegle/randomchat.py`: python_omegle/randomchat.py
 
 .. _`ISO 639-1`: https://en.wikipedia.org/wiki/ISO_639-1
 
@@ -552,6 +557,6 @@ XXX
 
 .. _`ReCAPTCHA protocol`: https://google.com/recaptcha/
 
-.. _`python_omegle/__init__.py`: ../python_omegle/__init__.py
+.. _`python_omegle/__init__.py`: python_omegle/__init__.py
 
 .. _`Welcome to the omegle blog!`: https://web.archive.org/web/20090403052716/http://omegler.blogspot.com/2009/03/welcome-to-omegle-blog.html

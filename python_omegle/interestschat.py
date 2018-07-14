@@ -143,3 +143,15 @@ class InterestsChat(_AbstractChat):
     def interests(self, interests):
         _check_interests_type(interests=interests)
         self._interests = interests
+
+    def __repr__(self):
+        return 'InterestsChat(interests={}, language=\"{}\")'.format(
+            self.interests, self.language
+        )
+
+    def __str__(self):
+        # I'll regret this later...
+        connected = "yes" if self._chat_ready_flag else "no"
+        return "Interests-based chat (interests: {}, language: {}, connected: {})".format(
+            self.interests, self.language, connected
+        )

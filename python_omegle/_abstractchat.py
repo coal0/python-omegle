@@ -34,7 +34,7 @@ class _AbstractChat(metaclass=abc.ABCMeta):
         Return:
             - No return value.
         """
-        self._language = language
+        self.language = language
         self._server_url = random.choice(_SERVER_POOL)
         self._events = queue.Queue()
         self._random_id = _generate_random_id_string()
@@ -102,6 +102,7 @@ class _AbstractChat(metaclass=abc.ABCMeta):
             self._server_url + _DISCONNECT_URL,
             data={"id": self._chat_id}
         )
+        self._chat_ready_flag = False
 
     def start_typing(self):
         """Tell the server that the client has started typing.

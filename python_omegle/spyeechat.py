@@ -127,3 +127,13 @@ class SpyeeChat(_AbstractChat):
 
             elif event_type == "recaptchaRequired":
                 raise PythonOmegleException("ReCAPTCHA check required.")
+
+    def __repr__(self):
+        return 'SpyeeChat(language=\"{}\")'.format(self.language)
+
+    def __str__(self):
+        # I'll regret this later...
+        connected = "yes" if self._chat_ready_flag else "no"
+        return "Spyee chat (language: {}, connected: {})".format(
+            self.language, connected
+        )

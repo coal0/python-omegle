@@ -1,5 +1,4 @@
 import random
-import string
 
 import requests
 
@@ -17,7 +16,7 @@ _TYPING_URL = "/typing"                             # POST id
 _STOPPED_TYPING_URL = "/stoppedtyping"              # POST id
 _EVENTS_URL = "/events"                             # POST id
 
-_RANDOM_ID_POOL = string.ascii_uppercase + string.digits
+_RANDOM_ID_POOL = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
 
 # Language codes according to ISO 639-1 (+ ISO 639-2).
 # Only languages supported by the Google Translate widget are included
@@ -139,11 +138,17 @@ def _check_message_type(message):
 
 
 def _check_interests_type(interests):
-    """Check if the argument is a list.
+    """Check if the argument is a valid list of interests.
     If the argument is not a list, raise a TypeError.
+    If the list is empty, raise a ValueError.
+    If any of the elements in the list is not a string, raise a TypeError.
     """
     if not isinstance(interests, list):
         raise TypeError("Interests must be a list.")
+    if not interests:
+        raise ValueError("At least one interest must be provided.")
+    if any(not isinstance(interest, str) for interest in interests):
+        raise TypeError("All interests must be strings.")
 
 
 def _check_language_type_and_value(language):
@@ -153,7 +158,7 @@ def _check_language_type_and_value(language):
     defined in _LANGUAGE_CODES, raise a ValueError.
     """
     if not isinstance(language, str):
-        raise TypeError("Language must be a 'str' instance.")
+        raise TypeError("Language must be a string.")
     elif language.lower() not in _LANGUAGE_CODES:
         raise ValueError(
             "Unknown language: '{}' ".format(language) +
@@ -178,7 +183,7 @@ def _generate_random_id_string():
     """Generate an 8-character random ID string.
     The ID returned consists of digits and uppercase ASCII letters.
     """
-    return "".join(random.choice(_RANDOM_ID_POOL) for _ in range(9))
+    return "".join(random.choice(_RANDOM_ID_POOL) for _ in range(8))
 
 
 def _make_safe_request(function):
@@ -189,7 +194,7 @@ def _make_safe_request(function):
     try:
         return function()
     except requests.RequestException as exc:
-        error_message = "HTTP request failed (reason: {}).".format(str(exc))
+        error_message = "HTTP request failed (reason: {}).".format(exc)
         raise PythonOmegleException(error_message) from None
 
 requests.get_ = requests.get

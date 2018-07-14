@@ -1,6 +1,24 @@
 Changelog
 =========
 
+1.0.6 (July 14th, 2018)
+-----------------------
+
+Changed
+~~~~~~~
+
+* Changed ``InterestsChat.__str__()``'s return value to be more accurate.
+
+
+1.0.5 (July 14th, 2018)
+-----------------------
+
+Added
+~~~~~
+
+* Added missing ``.__str__()`` and ``.__repr__()`` magic methods.
+
+
 1.0.4 (July 14th, 2018)
 -----------------------
 

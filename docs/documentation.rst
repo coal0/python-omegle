@@ -366,7 +366,7 @@ something?
 
 Quick tip: The __init__.py file for Python-Omegle contains all the classes
 that are part of the API. There is no need to import from the modules
-themselves. For the remainder of this tutorial, objects will be imported from
+themselves. For the remainder of this tutorial, objects will be imported from 
 `python_omegle/__init__.py`_.
 
 ----
@@ -558,7 +558,5 @@ XXX
 .. _`ISO 639-2`: https://en.wikipedia.org/wiki/ISO_639-2
 
 .. _`ReCAPTCHA protocol`: https://google.com/recaptcha/
-
-.. _`python_omegle/__init__.py`: python_omegle/__init__.py
 
 .. _`Welcome to the omegle blog!`: https://web.archive.org/web/20090403052716/http://omegler.blogspot.com/2009/03/welcome-to-omegle-blog.html

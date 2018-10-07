@@ -551,6 +551,8 @@ XXX
 
 .. _`python_omegle/randomchat.py`: ../python_omegle/randomchat.py
 
+.. _`python_omegle/__init__.py`: ../python_omegle/__init__.py
+
 .. _`ISO 639-1`: https://en.wikipedia.org/wiki/ISO_639-1
 
 .. _`ISO 639-2`: https://en.wikipedia.org/wiki/ISO_639-2

@@ -543,13 +543,13 @@ XXX
        be explained in detail in the respective sections.
 
 
-.. _`python_omegle/_abstractchat.py`: python_omegle/_abstractchat.py
+.. _`python_omegle/_abstractchat.py`: ../python_omegle/_abstractchat.py
 
-.. _`python_omegle/chatevent.py`: python_omegle/chatevent.py
+.. _`python_omegle/chatevent.py`: ../python_omegle/chatevent.py
 
-.. _`python_omegle/exceptions.py`: python_omegle/exceptions.py
+.. _`python_omegle/exceptions.py`: ../python_omegle/exceptions.py
 
-.. _`python_omegle/randomchat.py`: python_omegle/randomchat.py
+.. _`python_omegle/randomchat.py`: ../python_omegle/randomchat.py
 
 .. _`ISO 639-1`: https://en.wikipedia.org/wiki/ISO_639-1
 

@@ -6,7 +6,7 @@ from python_omegle.exceptions import PythonOmegleException
 
 _SERVER_POOL = tuple("https://front{}.omegle.com".format(n) for n in range(1, 33))
 
-_START_URL = "/start?caps=recaptcha2&rcs=1&\
+_START_URL = "/start?caps=recaptcha2,t&rcs=1&\
 firstevents=1&randid={}&lang={}"                    # GET randid, lang
 _START_INTERESTS_URL = _START_URL + "&topics={}"    # GET randid, lang, topics
 _START_SPY_URL = _START_URL + "&wantsspy=1"         # GET randid, lang
